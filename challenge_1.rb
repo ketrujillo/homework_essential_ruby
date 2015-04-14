@@ -14,7 +14,14 @@
 #   http://en.wikipedia.org/wiki/Mortgage_calculator
 
 def pmt(rate, nper, pv)
+
   # =========================================================
+  #the required output already accounts for monthly nature by dividing the 0.0404 by 12. it also already puts the percentage in decimal form so no need to adjust for rate on the back end
+  part1 = (pv * rate)
+  part2 = 1 - (1 + rate)**-nper
+
+  monthly_payment = part1 / part2
+
   # Your code to implement the method goes here.
   # You shouldn't have to write or change code anywhere else.
   # =========================================================
